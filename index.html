@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TasteMates</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-logo">
+            <img src="logo.png" alt="TasteMates Logo">
+        </div>
+
+        <div class="nav-links">
+            <button onclick="showSection('inicio')">Inicio</button>
+            <button onclick="showSection('sobreNosotros')">Sobre Nosotros</button>
+
+            <div class="user-section">
+                <div id="userDisplay" class="hidden">
+                    <span>Bienvenido, <span id="userName"></span></span>
+                    <button onclick="logout()" class="logout-btn">Cerrar Sesión</button>
+                </div>
+
+                <div id="authButtons">
+                    <button onclick="showSection('iniciarSesion')">Iniciar Sesión</button>
+                    <button onclick="showSection('registrarse')">Registrarse</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content" role="main">
+        <section id="inicio" class="section hero">
+            <h1>Bienvenido a TasteMates</h1>
+            <p>Descubre los mejores sabores vegetarianos</p>
+            
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Busca restaurantes vegetarianos...">
+                    <button id="searchButton">Buscar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="noticias" class="section news-section">
+            <h1>Noticias y Novedades</h1>
+            
+            <div class="news-grid">
+                <div class="news-card">
+                    <h3>¡Nuevo restaurante vegano en Miraflores!</h3>
+                    <p>Descubre los deliciosos sabores de "Verde & Co", el nuevo spot vegano del distrito.</p>
+                    <a href="#">Leer más</a>
+                </div>
+        
+                <div class="news-card">
+                    <h3>Taller de cocina vegetariana</h3>
+                    <p>Aprende a preparar deliciosos platos vegetarianos este fin de semana.</p>
+                    <a href="#">Leer más</a>
+                </div>
+        
+                <div class="news-card">
+                    <h3>Festival Vegano 2024</h3>
+                    <p>¡No te pierdas el evento vegano más grande del año! Más de 50 expositores.</p>
+                    <a href="#">Leer más</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="iniciarSesion" class="section login-form hidden">
+            <img src="logo.png" alt="TasteMates Logo">
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <input type="email" id="loginEmail" placeholder="Correo electrónico" required>
+                <input type="password" id="loginPassword" placeholder="Contraseña" required>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+        </section>
+
+        <section id="registrarse" class="section login-form hidden">
+            <img src="logo.png" alt="TasteMates Logo">
+            <form id="registerForm" onsubmit="handleRegister(event)">
+                <input type="text" id="registerName" placeholder="Nombre completo" required>
+                <input type="email" id="registerEmail" placeholder="Correo electrónico" required>
+                <input type="password" id="registerPassword" placeholder="Contraseña" required>
+                <input type="password" id="confirmPassword" placeholder="Confirmar contraseña" required>
+                <button type="submit">Registrarse</button>
+            </form>
+        </section>
+
+        <section id="sobreNosotros" class="section about-section hidden">
+            <img src="logo.png" alt="TasteMates Logo">
+            <h2>¿Quiénes somos?</h2>
+            <p>
+                VeganTaste es una empresa que fue fundada por un grupo de amigos que
+                compartían un sueño: demostrarle al mundo que la comida vegetariana y
+                vegana puede ser tan deliciosa y satisfactoria como cualquier otro tipo
+                de cocina. Con una visión compartida y un deseo mutuo: romper los
+                estereotipos sobre la alimentación vegetariana y vegana, demostrando que
+                esta también es deliciosa.
+            </p>
+            <p>
+                Desde sus primeros días, Vegantaste ha trabajado para redefinir la
+                percepción de la comida vegana y vegetariana, ofreciendo la aplicación
+                TasteMates, la cual sirve para ubicar los mejores restaurantes veganos y
+                vegetarianos en la zona de Lima, Perú. De esta manera promoverá la
+                cultura de la comida vegetariana y vegana.
+            </p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
